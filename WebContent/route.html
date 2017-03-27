@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="ISO-8859-1">
+<title>route </title>
+
+</head>
+<body>
+<body ng-app="myApp">
+<p><a href="#/">Index</a></p>
+<a href="#red">Bind</a>
+<a href="#green">green</a>
+<a href="#blue">Blue</a>
+<a href="#hide">animate</a>
+<div ng-view></div>
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "index.html"
+    })
+    .when("/red", {
+        templateUrl : "Bind.html"
+    })
+    .when("/green", {
+        templateUrl : "green.html"
+    })
+    .when("/blue", {
+        templateUrl : "blue.html"
+    })
+    .when("/hide",{
+    	templateUrl: "animate.html"
+    });
+});
+</script>
+
+
+</body>
+</html>
